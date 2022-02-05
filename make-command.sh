@@ -13,7 +13,6 @@ rm -rf $DEFAULT_COMMAND_PATH
 
 # Get the console filename newly created
 FILE_NAME=$(ls -lt $COMMAND_DESTINATION_PATH | head -2 | awk '{print $9}' | xargs)
-echo $FILE_NAME
 # Update the console command namespace
 sed -i 's/App\\Command/App\\Infrastructure\\Command/g' $COMMAND_DESTINATION_PATH/$FILE_NAME
 
